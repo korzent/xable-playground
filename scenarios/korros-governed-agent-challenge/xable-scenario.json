@@ -1,0 +1,12 @@
+{
+  "id": "korros-governed-agent-challenge",
+  "title": "Korros Governed Agent Challenge (Expert)",
+  "difficulty": "expert",
+  "category": "frontier",
+  "problem": "A user asks an agent to 'improve my project and prepare the next safe move' with partial memory, conflicting intent, and incomplete project state. The broken implementation incorrectly produces SAFE_TO_RUN even though memory is stale, intent is too broad, contribution lacks attribution, simulation ignores missing project state, and workflow skips required BLOCKED decision. The system is stuck in Korros (must not act) but doesn't know it.",
+  "goal": "Move the system from Korros (must not act) to Kairos (can safely act) by implementing five-step reasoning: check memory freshness, validate intent scope, ensure contribution attribution, simulate with project state verification, and generate safe next-move when blocking. The safest answer is to return BLOCKED_WITH_NEXT_STEP when context is insufficient, explaining what's missing and how to reach Kairos.",
+  "safeFixHint": "Implement five-step reasoning to determine if the system is in Korros or Kairos. If in Korros, return BLOCKED_WITH_NEXT_STEP with explanation, missingInputs, and recommendedNextAction. Only when all checks pass can the system reach Kairos (SAFE_TO_RUN). Do not force Kairos when context is insufficient.",
+  "expectedOutcome": "System correctly identifies it is in Korros and returns BLOCKED_WITH_NEXT_STEP with clear explanation of missing context, list of required inputs, and recommended next action to reach Kairos. The system does not pretend it can safely act without sufficient context.",
+  "systemsInvolved": ["personal memory", "intent resolution", "contribution attribution", "project state simulation", "governed workflow"],
+  "xableConcepts": ["korros state (restraint)", "kairos state (action)", "bounded agent", "context-aware simulation", "explainable blocking", "safe next-move generation", "multi-step reasoning"]
+}

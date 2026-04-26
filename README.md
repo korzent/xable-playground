@@ -3,7 +3,9 @@
 Turn bugs into safe, explainable changes.  
 See what would happen before you apply a fix.
 
----
+This playground teaches you when to block (Korros) and when to act (Kairos).
+
+**Fork this repo. Pick a broken scenario. Let Xable inspect it, simulate a safe fix, and explain what would change before anything runs.**
 
 ## What this is
 
@@ -23,10 +25,44 @@ You see what would happen first.
 
 ## Try it in 60 seconds
 
-    git clone https://github.com/korzent/xable-playground.git
-    cd xable-playground
-    npm install
-    npm test
+```bash
+npm install
+npm test
+
+# Run a specific beginner scenario
+npm run scenario:react
+npm run scenario:api
+npm run scenario:async
+
+# Run an advanced scenario
+npm run scenario:full-stack
+npm run scenario:workflow
+
+# Run the expert challenge
+npm run scenario:korros-governed-agent
+```
+
+## Korros & Kairos
+
+This system operates between two states:
+
+**Korros** — the system must not act  
+**Kairos** — the system can safely act  
+
+---
+
+Most problems are not solved by acting immediately.
+
+They are solved by first reaching Korros:
+- identifying missing context
+- preventing unsafe behavior
+- understanding the system state
+
+Only then can the system reach Kairos.
+
+The goal is not just to fix code.
+
+The goal is to know when action is safe.
 
 You’ll see failing tests.
 
@@ -48,7 +84,14 @@ Before changing anything, ask:
 
 ## Scenarios
 
-### Beginner
+| Scenario | Difficulty | Category |
+|----------|------------|----------|
+| React Dashboard Null Crash | Beginner | Frontend |
+| API Validation Missing | Intermediate | API |
+| Async State Race | Intermediate | Async |
+| Full-Stack Stabilization | Advanced | Multi-System |
+| Governed Workflow Simulation | Advanced | Governed-Workflow |
+| Korros Governed Agent Challenge (Expert) | Expert / Frontier | Multi-System |
 
 - React dashboard crash (null data)  
 - API validation missing  
@@ -59,7 +102,9 @@ Before changing anything, ask:
 - Full-stack stabilization (frontend + API + state)  
 - Governed workflow simulation (memory + agent + reasoning)  
 
----
+## Expert / Frontier: Korros Governed Agent Challenge
+
+The hardest challenge in the repo, requiring multi-step reasoning across memory, intent, contribution, simulation, and safety gating. The goal is to move the system from Korros (must not act) to Kairos (can safely act). The safest answer may be to block and ask for the next missing input.
 
 ## Why this is different
 
