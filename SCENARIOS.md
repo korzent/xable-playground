@@ -11,14 +11,35 @@ This document describes all available scenarios in the playground.
 | async-state-race | Async State Race | Intermediate | Async | Async result updates state after component unmount or stale request | Ignore stale results and clean up safely | `npm run scenario:async` |
 | full-stack-stabilization | Full-Stack Stabilization | Advanced | Multi-System | Frontend, API, and shared state disagree about project status, creating misleading "safe to run" messaging | Stabilize the system with consistent validation, fallback states, and impossible state rejection | `npm run scenario:full-stack` |
 | governed-workflow-simulation | Governed Workflow Simulation | Advanced | Governed-Workflow | Agent proposes actions without checking context, simulation returns SAFE when context is missing | Make workflow safe: check memory before suggesting, cite work examples, block when context insufficient | `npm run scenario:workflow` |
+| korros-governed-agent-challenge | Korros Governed Agent Challenge (Expert) | Expert / Frontier | Multi-System | Agent incorrectly produces SAFE_TO_RUN despite stale memory, broad intent, missing attribution, and incomplete project state | Implement five-step reasoning to return BLOCKED_WITH_NEXT_STEP when context is insufficient | `npm run scenario:korros-governed-agent` |
 
 ## Beginner Scenarios
 
 Simple local fixes that demonstrate basic code stabilization.
 
+## Levels
+
+- Beginner — Fix a single issue
+- Advanced — Reason across multiple systems
+- Korros (Expert) — The system must block unsafe execution
+
+A Korros scenario requires:
+- refusing unsafe execution
+- identifying missing context
+- explaining why the action is blocked
+- proposing the next safe step
+
+The correct answer is often:
+
+BLOCKED
+
 ## Advanced Scenarios
 
 Multi-system reasoning scenarios that demonstrate Xable reasoning across connected parts of a system, not just single-file code fixes. They are designed to demonstrate safe proposals, state previews, and blocked actions when context is missing.
+
+## Expert / Frontier Scenarios
+
+The hardest challenges in the repo, requiring multi-step reasoning across memory, intent, contribution, simulation, and safety gating. The goal is to move the system from Korros (must not act) to Kairos (can safely act). The safest answer may be to block and ask for the next missing input.
 
 ## Scenario Details
 
@@ -121,3 +142,29 @@ Multi-system reasoning scenarios that demonstrate Xable reasoning across connect
 **Systems Involved:** Personal Memory, Agent Suggestion, Contribution Record, Simulation
 
 **Xable Concepts:** Bounded agent, portable memory, explainable proposal, blocked when unsafe
+
+---
+
+### Korros Governed Agent Challenge (Expert)
+
+**Path:** `scenarios/korros-governed-agent-challenge/`
+
+**Problem:** A user asks an agent to "improve my project and prepare the next safe move" with partial memory, conflicting intent, and incomplete project state. The broken implementation incorrectly produces SAFE_TO_RUN even though memory is stale, intent is too broad, contribution lacks attribution, simulation ignores missing project state, and workflow skips required BLOCKED decision. The system is stuck in Korros (must not act) but doesn't know it.
+
+**Goal:** Move the system from Korros (must not act) to Kairos (can safely act) by implementing five-step reasoning: check memory freshness, validate intent scope, ensure contribution attribution, simulate with project state verification, and generate safe next-move when blocking. The safest answer is to return BLOCKED_WITH_NEXT_STEP when context is insufficient, explaining what's missing and how to reach Kairos.
+
+**Expected Fix Theme:** Implement five-step reasoning to determine if the system is in Korros or Kairos. If in Korros, return BLOCKED_WITH_NEXT_STEP with explanation, missingInputs, and recommendedNextAction. Only when all checks pass can the system reach Kairos (SAFE_TO_RUN). Do not force Kairos when context is insufficient.
+
+**Files:**
+- `memory/userMemory.js` - User memory model
+- `memory/memoryResolver.js` - Memory freshness and sufficiency resolver
+- `intent/intentRequest.js` - Intent request model
+- `intent/intentValidator.js` - Intent scope validator
+- `contribution/contributionBuilder.js` - Contribution builder with attribution
+- `simulation/safetySimulator.js` - Safety simulation with project state checks
+- `workflow/governedAgentFlow.js` - Orchestration of all reasoning steps
+- `xable-scenario.json` - Scenario metadata
+
+**Systems Involved:** Personal Memory, Intent Resolution, Contribution Attribution, Project State Simulation, Governed Workflow
+
+**Xable Concepts:** Korros state (restraint), Kairos state (action), Bounded agent, context-aware simulation, explainable blocking, safe next-move generation, multi-step reasoning

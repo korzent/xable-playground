@@ -2,6 +2,8 @@
 
 A collection of realistic broken code scenarios for Xable Personal Mode demos.
 
+This playground teaches you when to block (Korros) and when to act (Kairos).
+
 **Fork this repo. Pick a broken scenario. Let Xable inspect it, simulate a safe fix, and explain what would change before anything runs.**
 
 ## What This Is
@@ -29,7 +31,32 @@ npm run scenario:async
 # Run an advanced scenario
 npm run scenario:full-stack
 npm run scenario:workflow
+
+# Run the expert challenge
+npm run scenario:korros-governed-agent
 ```
+
+## Korros & Kairos
+
+This system operates between two states:
+
+**Korros** — the system must not act  
+**Kairos** — the system can safely act  
+
+---
+
+Most problems are not solved by acting immediately.
+
+They are solved by first reaching Korros:
+- identifying missing context
+- preventing unsafe behavior
+- understanding the system state
+
+Only then can the system reach Kairos.
+
+The goal is not just to fix code.
+
+The goal is to know when action is safe.
 
 ## How to Use with Xable
 
@@ -80,12 +107,17 @@ The mock memory includes:
 | Async State Race | Intermediate | Async |
 | Full-Stack Stabilization | Advanced | Multi-System |
 | Governed Workflow Simulation | Advanced | Governed-Workflow |
+| Korros Governed Agent Challenge (Expert) | Expert / Frontier | Multi-System |
 
 See [SCENARIOS.md](SCENARIOS.md) for detailed descriptions.
 
 ## Advanced: Reason Across Systems
 
 These scenarios show Xable reasoning across connected parts of a system, not just single-file code fixes. They are designed to demonstrate safe proposals, state previews, and blocked actions when context is missing.
+
+## Expert / Frontier: Korros Governed Agent Challenge
+
+The hardest challenge in the repo, requiring multi-step reasoning across memory, intent, contribution, simulation, and safety gating. The goal is to move the system from Korros (must not act) to Kairos (can safely act). The safest answer may be to block and ask for the next missing input.
 
 ## Safety Promise
 
