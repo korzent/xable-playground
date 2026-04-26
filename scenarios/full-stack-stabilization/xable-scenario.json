@@ -1,0 +1,12 @@
+{
+  "id": "full-stack-stabilization",
+  "title": "Full-Stack Stabilization",
+  "difficulty": "advanced",
+  "category": "multi-system",
+  "problem": "A dashboard, API handler, and shared state model disagree about project status, creating misleading 'safe to run' messaging",
+  "goal": "Stabilize the system so invalid API input returns clear 400 errors, frontend renders safe fallback states, shared project state rejects impossible combinations, and agent suggestion is only shown when prerequisites are met",
+  "safeFixHint": "Add validation across all layers, implement safe fallbacks, and enforce state consistency rules to ensure cross-layer consistency",
+  "expectedOutcome": "System validates input at API layer, frontend handles incomplete data gracefully, shared state rejects impossible combinations, and agent suggestions only appear when prerequisites are met",
+  "systemsInvolved": ["frontend", "api", "shared-state"],
+  "xableConcepts": ["safe simulation", "state consistency", "fallback behavior"]
+}

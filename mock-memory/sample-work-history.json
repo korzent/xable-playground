@@ -1,0 +1,51 @@
+{
+  "historyType": "sample_demo_work_history/v1",
+  "owner": "demo-user",
+  "entries": [
+    {
+      "id": "work-001",
+      "title": "Fixed dashboard empty state",
+      "type": "bugfix",
+      "summary": "Added null checks to Dashboard component to handle missing GitHub data gracefully",
+      "skills": ["react", "defensive-programming", "error-handling"],
+      "relatedScenarioId": "react-dashboard-null-crash",
+      "completedAt": "2024-01-15T10:00:00Z"
+    },
+    {
+      "id": "work-002",
+      "title": "Added request validation to API handler",
+      "type": "security",
+      "summary": "Implemented input validation for API endpoints to return 400 errors for malformed requests",
+      "skills": ["api-design", "validation", "error-handling"],
+      "relatedScenarioId": "api-validation-missing",
+      "completedAt": "2024-02-20T14:30:00Z"
+    },
+    {
+      "id": "work-003",
+      "title": "Cleaned up async component lifecycle",
+      "type": "bugfix",
+      "summary": "Added cleanup functions and mounted flag checks to prevent state updates after unmount",
+      "skills": ["react-hooks", "async", "lifecycle"],
+      "relatedScenarioId": "async-state-race",
+      "completedAt": "2024-03-10T09:15:00Z"
+    },
+    {
+      "id": "work-004",
+      "title": "Documented safe deployment checklist",
+      "type": "documentation",
+      "summary": "Created a checklist for safe code changes and deployment practices",
+      "skills": ["documentation", "best-practices"],
+      "relatedScenarioId": null,
+      "completedAt": "2024-04-01T11:00:00Z"
+    },
+    {
+      "id": "work-005",
+      "title": "Refactored error boundaries",
+      "type": "refactor",
+      "summary": "Improved error boundary implementation to provide better user feedback",
+      "skills": ["react", "error-handling", "ux"],
+      "relatedScenarioId": "react-dashboard-null-crash",
+      "completedAt": "2024-04-15T16:45:00Z"
+    }
+  ]
+}

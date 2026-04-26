@@ -1,0 +1,10 @@
+{
+  "id": "api-validation-missing",
+  "title": "API Validation Missing",
+  "difficulty": "intermediate",
+  "category": "api",
+  "problem": "API handler accepts malformed request bodies and proceeds with unsafe assumptions",
+  "goal": "Return clear 400 errors before execution",
+  "safeFixHint": "Add input validation to check that required fields (intent, action) exist before processing, and return 400 Bad Request with helpful error messages when validation fails",
+  "expectedOutcome": "Handler should validate input and return 400 status with clear error messages for malformed requests instead of crashing or returning incorrect 200 responses"
+}

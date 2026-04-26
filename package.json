@@ -1,0 +1,28 @@
+{
+  "name": "xable-playground",
+  "version": "1.0.0",
+  "description": "Realistic broken code scenarios for Xable Personal Mode demos",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --test scenarios/**/*/*.test.js",
+    "scenario:react": "node --test scenarios/react-dashboard-null-crash/src/*.test.js",
+    "scenario:api": "node --test scenarios/api-validation-missing/src/*.test.js",
+    "scenario:async": "node --test scenarios/async-state-race/src/*.test.js",
+    "scenario:full-stack": "node --test scenarios/full-stack-stabilization/**/*.test.js",
+    "scenario:workflow": "node --test scenarios/governed-workflow-simulation/**/*.test.js"
+  },
+  "keywords": [
+    "xable",
+    "playground",
+    "debugging",
+    "scenarios"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "react": "^18.2.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

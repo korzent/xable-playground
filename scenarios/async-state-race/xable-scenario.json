@@ -1,0 +1,10 @@
+{
+  "id": "async-state-race",
+  "title": "Async State Race",
+  "difficulty": "intermediate",
+  "category": "async",
+  "problem": "Async result updates state after component unmount or stale request",
+  "goal": "Ignore stale results and clean up safely",
+  "safeFixHint": "Add a mounted flag, check it before state updates, and use cleanup in useEffect to cancel pending operations",
+  "expectedOutcome": "Hook should check if component is mounted before updating state and ignore results from stale requests"
+}
