@@ -1,9 +1,9 @@
-# Fix real broken systems with AI — before anything runs
+# This playground teaches you when to block (Korros) and when to act (Kairos).
+
+Fix real broken systems with AI — before anything runs
 
 Turn bugs into safe, explainable changes.  
 See what would happen before you apply a fix.
-
-This playground teaches you when to block (Korros) and when to act (Kairos).
 
 **Fork this repo. Pick a broken scenario. Let Xable inspect it, simulate a safe fix, and explain what would change before anything runs.**
 
@@ -223,3 +223,16 @@ https://xableai.web.app
 
 Your AI workspace.  
 Owned by you.
+
+## Security & Contact
+
+If you have security questions, want to use Xable on your own repositories, or are interested in enterprise usage:
+
+security@korzent.com
+
+---
+
+For responsible disclosure, please include:
+- affected scenario or repo
+- steps to reproduce
+- expected vs actual behavior
