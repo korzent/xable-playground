@@ -9,7 +9,8 @@
     "scenario:api": "node --test scenarios/api-validation-missing/src/*.test.js",
     "scenario:async": "node --test scenarios/async-state-race/src/*.test.js",
     "scenario:full-stack": "node --test scenarios/full-stack-stabilization/**/*.test.js",
-    "scenario:workflow": "node --test scenarios/governed-workflow-simulation/**/*.test.js"
+    "scenario:workflow": "node --test scenarios/governed-workflow-simulation/**/*.test.js",
+    "scenario:korros-governed-agent": "node --test scenarios/korros-governed-agent-challenge/**/*.test.js"
   },
   "keywords": [
     "xable",
