@@ -1,0 +1,10 @@
+{
+  "id": "react-dashboard-null-crash",
+  "title": "React Dashboard Null Crash",
+  "difficulty": "beginner",
+  "category": "frontend",
+  "problem": "Dashboard crashes when GitHub data is null or repositories is missing",
+  "goal": "Render a clear empty state instead of crashing",
+  "safeFixHint": "Add null checks before accessing github.repositories and render an empty state when data is missing",
+  "expectedOutcome": "Component should handle null/undefined github data gracefully and show a message instead of crashing"
+}

@@ -1,0 +1,15 @@
+{
+  "profileType": "sample_demo_profile/v1",
+  "userId": "demo-user",
+  "displayName": "Demo Builder",
+  "goals": [
+    "improve project stability",
+    "understand safe code changes",
+    "build a portable work history"
+  ],
+  "preferredWork": [
+    "frontend stabilization",
+    "api validation",
+    "async bug fixes"
+  ]
+}

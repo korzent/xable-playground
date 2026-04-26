@@ -1,0 +1,12 @@
+{
+  "id": "governed-workflow-simulation",
+  "title": "Governed Workflow Simulation",
+  "difficulty": "advanced",
+  "category": "governed-workflow",
+  "problem": "A mock personal agent proposes an action without checking enough context. Agent suggests changes even when memory is empty, suggestion does not cite source work examples, simulation says SAFE even when context is missing, contribution record is created without a clear reason, and user cannot tell what changed or why",
+  "goal": "Make the governed workflow safe and understandable: agent must check memory before suggesting, suggestion must cite sample work history when available, simulation must return BLOCKED when context is insufficient, contribution must include a human-readable reason, and output must explain proposed change, simulated state, and next move",
+  "safeFixHint": "Add bounded agent checks, require work history citations, implement context-aware simulation, and ensure explainable proposals with clear reasons and next steps",
+  "expectedOutcome": "Agent checks memory before suggesting, suggestions cite sample work history, simulation returns BLOCKED when context is insufficient, contributions include human-readable reasons, and output explains proposed change, simulated state, and next move",
+  "systemsInvolved": ["personal memory", "agent suggestion", "contribution record", "simulation"],
+  "xableConcepts": ["bounded agent", "portable memory", "explainable proposal", "blocked when unsafe"]
+}
