@@ -1,0 +1,37 @@
+# Security Policy
+
+## Reporting a vulnerability
+
+If you discover a security issue or have concerns about how Xable interacts with repositories:
+
+security@korzent.com
+
+Please include:
+
+- description of the issue  
+- steps to reproduce  
+- potential impact  
+- any relevant files or scenarios  
+
+---
+
+## Scope
+
+This repository is a public playground with intentionally broken scenarios.
+
+Do not submit vulnerabilities related to:
+- expected broken behavior in scenarios
+- test failures (these are intentional)
+
+---
+
+## Our commitment
+
+We take security seriously.
+
+- Xable operates read-only by default  
+- no repository is modified without explicit user approval  
+- analysis is limited to selected files  
+- private code is not used for model training  
+
+We aim to respond to security reports promptly.
